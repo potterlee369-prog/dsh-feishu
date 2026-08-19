@@ -1,0 +1,53 @@
+{
+  "name": "dsh-feishu",
+  "description": "DSH host plugin: a Feishu (Lark) bot bridge — send @dsh messages from Feishu on your phone or PC, and the local DSH agent runs them and replies back to Feishu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@deepseek-ai/dsh-settings": "^0.1.0-rc.6",
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "@larksuiteoapi/node-sdk": "^1.73.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.6"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.6",
+    "@types/node": "^22.10.0",
+    "@types/react": "~18.3.1",
+    "@types/react-dom": "~18.3.1",
+    "esbuild": "^0.25.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.7.0"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "smoke": "node smoke-test.mjs"
+  }
+}
